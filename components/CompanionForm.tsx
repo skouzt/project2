@@ -54,9 +54,7 @@ const CompanionForm = () => {
     },
   })
 
-  // ------------------
-  // 🎯 Submit Handler
-  // ------------------
+
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     const companion = await createCompanion(values)
 
@@ -68,9 +66,7 @@ const CompanionForm = () => {
     }
   }
 
-  // ------------------
-  // 🎯 Render
-  // ------------------
+ 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -90,7 +86,7 @@ const CompanionForm = () => {
           )}
         />
 
-        {/* Subject */}
+   
         <FormField
           control={form.control}
           name="subject"
@@ -116,7 +112,7 @@ const CompanionForm = () => {
           )}
         />
 
-        {/* Topic */}
+      
         <FormField
           control={form.control}
           name="topic"
@@ -135,7 +131,7 @@ const CompanionForm = () => {
           )}
         />
 
-        {/* Voice */}
+ 
         <FormField
           control={form.control}
           name="voice"
@@ -158,7 +154,7 @@ const CompanionForm = () => {
           )}
         />
 
-        {/* Style */}
+    
         <FormField
           control={form.control}
           name="style"
@@ -181,7 +177,6 @@ const CompanionForm = () => {
           )}
         />
 
-        {/* Duration */}
         <FormField
           control={form.control}
           name="duration"
@@ -196,7 +191,6 @@ const CompanionForm = () => {
           )}
         />
 
-        {/* Submit Button */}
         <Button type="submit" className="w-full cursor-pointer">
           Build your Companion
         </Button>

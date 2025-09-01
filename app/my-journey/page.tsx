@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import {Accordion,AccordionContent,AccordionItem,AccordionTrigger,} from "@/components/ui/accordion"
 import { getAllCompanions, getUserCompanion } from "@/lib/action/companion.action"
 import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
@@ -14,7 +9,7 @@ import CompanionList from "@/components/CompanionList"
 const Profilepage = async() => {
   const user = await currentUser()
   if(!user) redirect('/sign-in')
-    const companions = await getAllCompanions(user.id)
+  const companions = await getAllCompanions(user.id)
   const sessionHistory = await getUserCompanion(user.id)
   return (
     <main className='min-lg:w-2/3'>
@@ -55,7 +50,7 @@ const Profilepage = async() => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value={"companions"}>
-              <AccordionTrigger className="text-2xl font-bold">My Companions{`${companions.length}`}  </AccordionTrigger>
+              <AccordionTrigger className="text-2xl font-bold">My Companions </AccordionTrigger>
               <AccordionContent>
                 <CompanionList title="My Companions" companions={companions} /> 
               </AccordionContent>

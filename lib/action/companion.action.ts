@@ -66,7 +66,7 @@ export const addToSessionHistory = async (companion: string) => {
     return data
 }
 
-export const getRecentSessions = async (limit = 10, p0: number) =>{
+export const getRecentSessions = async (limit = 10) =>{
     const supabase = createsupabaseClient()
     const {data, error } = await supabase 
     .from ('session_history')

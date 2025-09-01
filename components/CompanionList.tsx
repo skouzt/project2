@@ -10,23 +10,25 @@ interface CompanionsListProps {
 }
 
 const CompanionList = ({title, companions, className}: CompanionsListProps) => {
+    console.log("companions:", companions);
+
     
   return (
     <article className={cn( 'companion-list', className )}>
         <h2 className="font-bold text-3xl">{title}</h2>
         <Table>
             <TableHeader>
-                <TableRow>
+                <TableRow >
                 <TableHead className="text-lg w-2/3">Lesson</TableHead>
                 <TableHead className="text-lg">Subject</TableHead>
                 <TableHead className="text-lg text-right">Duration</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {companions?.map(({id, subject, name, topic, duration}) => (
-                    <TableRow key={id}>
+                {companions?.filter(Boolean).map(({$id, subject, name, topic, duration}) => (
+                    <TableRow key={$id}>
                          <TableCell>
-                            <Link href={`/companions/${id}`}>
+                            <Link href={`/companions/${$id}`}>
                                <div className="flex items-center gap-2">
                                 <div className="size-[72px] flex items-center justify-center rounded-lg max-md:hidden" style={{backgroundColor: getSubjectColor(subject)}}>
                                     <Image src={`/icons/${subject}.svg`} alt={subject} width={35} height={35} />
@@ -58,6 +60,8 @@ const CompanionList = ({title, companions, className}: CompanionsListProps) => {
             </TableBody>
 </Table>
     </article>
+ 
+
   )
 }
 

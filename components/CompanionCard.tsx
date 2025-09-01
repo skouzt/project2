@@ -6,11 +6,11 @@ interface companioncardprops {
     name: string,
     topic: string,
     subject: string,
-    duaration: number,
+    duration: number,
     color: string
 
 }
-const CompanionCard = ({id, name, topic, subject, duaration, color}: companioncardprops) => {
+const CompanionCard = ({id, name, topic, subject, duration, color}: companioncardprops) => {
   return (
     <article className="companion-card" style={{backgroundColor : color}} >
         <div className="flex justify-between items-center">
@@ -28,7 +28,7 @@ const CompanionCard = ({id, name, topic, subject, duaration, color}: companionca
 
             <div className='flex items-centre gap-2'>
                 <Image  src="/icons/clock.svg" alt="duration" width={13.5} height={13.5}/>
-                <p className='text-sm'>{duaration} minutes</p>
+                <p className='text-sm'>{duration} minutes</p>
             </div>
        
         <Link href={`/companions/${id}`} className='w-full'>

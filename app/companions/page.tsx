@@ -13,7 +13,7 @@ const companionlibrary = async({searchParams}: SearchParams ) => {
   const companion =await getAllCompanions({subject, topic})
  
   return (
-    <main>
+    <main className='mb-10'>
       <section className='flex justify-between gap-4  max-sm:flex-col'>
         <h1>Companion Library</h1>
         <div className='flex gap-4'>
@@ -22,7 +22,7 @@ const companionlibrary = async({searchParams}: SearchParams ) => {
         </div>
 
       </section>
-      <section className='companion-grid'>
+      <section className='companions-grid'>
         {companion.map((companion)=> (
           <CompanionCard key={companion.id} {...companion}  color={getSubjectColor(companion.subject)}/>
         ))}
