@@ -44,8 +44,8 @@ Follow these steps to set up the project locally on your machine.
 #### Cloning the Repository
 
 ```bash
-git clone https://github.com/adrianhajdin/saas-app.git
-cd saas-app
+git clone https://github.com/skouzt/project2.git
+cd project2
 ```
 
 #### Installation
